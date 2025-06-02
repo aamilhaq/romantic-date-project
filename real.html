@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Date Question with Hearts from Bottom</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #f0f0f0;
+    position: relative;
+  }
+  #question-box {
+    position: absolute;
+    width: 300px;
+    padding: 20px;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    user-select: none;
+  }
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .heart {
+    position: fixed;
+    bottom: 0;
+    font-size: 24px;
+    color: red;
+    user-select: none;
+    pointer-events: none;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-150px) scale(1.5);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="question-box">
+  <p style="font-size: 18px; font-weight: bold;">Can i touch you boobiess??</p>
+  <button id="yes-btn">Yes</button>
+  <button id="no-btn">No</button>
+</div>
+
+<script>
+  const box = document.getElementById('question-box');
+  const yesBtn = document.getElementById('yes-btn');
+  const noBtn = document.getElementById('no-btn');
+
+  yesBtn.addEventListener('click', () => {
+    alert("Yay! I can't wait to play with them! ❤️");
+    startHearts();
+  });
+
+  noBtn.addEventListener('click', () => {
+    const maxX = window.innerWidth - box.offsetWidth;
+    const maxY = window.innerHeight - box.offsetHeight;
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    box.style.left = randomX + 'px';
+    box.style.top = randomY + 'px';
+  });
+
+  function centerBox() {
+    box.style.left = (window.innerWidth - box.offsetWidth) / 2 + 'px';
+    box.style.top = (window.innerHeight - box.offsetHeight) / 2 + 'px';
+  }
+  centerBox();
+  window.addEventListener('resize', centerBox);
+
+</script>
+
+</body>
+</html>

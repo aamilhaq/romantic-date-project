@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sweet Message</title>
+<style>
+    html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: url('xoxo.png') no-repeat center center fixed;
+    background-size: 300px auto;
+    font-family: 'Segoe Script', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ff416c;
+    overflow: hidden;
+    position: relative;
+    }
+
+
+  .message-box {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 15px rgba(255, 65, 108, 0.4);
+    max-width: 400px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.4;
+    z-index: 10;
+    position: relative;
+  }
+
+  .bouquet {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    font-size: 60px;
+    opacity: 0;
+    transform-origin: center center;
+    transform: translateX(-50%) translateY(0) scale(0.3);
+    animation: popUpToCenter 5s ease forwards;
+    animation-delay: 12.5s;
+    pointer-events: none;
+    user-select: none;
+    z-index: 20;
+  }
+
+  @keyframes popUpToCenter {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(0) scale(0.3);
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50vh) scale(3);
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+<a href="real.html" class="real-button" style="opacity: 0; transition: opacity 1s ease-in-out; animation: fadeIn 1s forwards 16s;">Real</a>
+
+
+<div class="message-box">
+  <p>Thank you for saying yes baby! ❤️<br><br>
+  I may be sleeping now but i miss you and love you so much.<br><br>
+  here is a bouquet of flowers 💕</p>
+</div>
+
+<div class="bouquet">💐</div>
+
+</body>
+</html>
